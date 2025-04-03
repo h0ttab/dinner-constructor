@@ -7,7 +7,7 @@ public class DinnerConstructor {
     Menu menu = new Menu();
     ComboGenerator comboGenerator = new ComboGenerator();
 
-    void addNewDish(String dishType, String dishName){
+    void addNewDish(String dishType, String dishName) {
         menu.addNewDish(dishType, dishName);
     }
 
@@ -17,5 +17,9 @@ public class DinnerConstructor {
 
     Map<String, ArrayList<String>> getMenu() {
         return menu.getMenu();
+    }
+
+    boolean checkType(String type) {
+        return this.getMenu().containsKey(type);
     }
 }

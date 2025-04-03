@@ -41,7 +41,7 @@ public class Menu {
         }
     }
 
-    Map<String, ArrayList<String>> getMenu(){
+    Map<String, ArrayList<String>> getMenu() {
         return this.menu;
     }
 
