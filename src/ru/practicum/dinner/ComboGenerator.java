@@ -6,7 +6,7 @@ import java.util.Map;
 import java.util.Random;
 
 public class ComboGenerator {
-    Random random = new Random();
+    static final Random random = new Random();
 
     private List<String> getRandomCombo(List<String> dishTypes, Map<String,
             List<String>> menu) {
@@ -21,14 +21,14 @@ public class ComboGenerator {
         return combo;
     }
 
-    public List<List<String>> generateSetOfCombo(int quantity,
+    public List<List<String>> generateCombos(int quantity,
             List<String> dishTypes, Map<String, List<String>> menu) {
-        List<List<String>> setOfCombo = new ArrayList<>();
+        List<List<String>> combos = new ArrayList<>();
 
         for (int i = 0; i < quantity; i++) {
-            setOfCombo.add(getRandomCombo(dishTypes, menu));
+            combos.add(getRandomCombo(dishTypes, menu));
         }
 
-        return setOfCombo;
+        return combos;
     }
 }

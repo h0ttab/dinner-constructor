@@ -7,12 +7,12 @@ public class DinnerConstructor {
     Menu menu = new Menu();
     ComboGenerator comboGenerator = new ComboGenerator();
 
-    void addNewDish(String dishType, String dishName) {
-        menu.addNewDish(dishType, dishName);
+    boolean addNewDish(String dishType, String dishName) {
+        return menu.addNewDish(dishType, dishName);
     }
 
-    List<List<String>> generateSetOfCombo(int quantity, List<String> dishTypes) {
-        return comboGenerator.generateSetOfCombo(quantity, dishTypes, menu.getMenu());
+    List<List<String>> generateCombos(int quantity, List<String> dishTypes) {
+        return comboGenerator.generateCombos(quantity, dishTypes, menu.getMenu());
     }
 
     Map<String, List<String>> getMenu() {

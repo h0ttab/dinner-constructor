@@ -25,7 +25,7 @@ public class Menu {
                 "Сельдь под шубой", "Капуста квашеная", "салат Греческий")));
     }
 
-    void addNewDish(String dishType, String dishName) {
+    boolean addNewDish(String dishType, String dishName) {
         List<String> dishesOfCurrentType;
 
         if (!menu.containsKey(dishType)) {
@@ -36,13 +36,14 @@ public class Menu {
 
         if (!dishesOfCurrentType.contains(dishName)) {
             dishesOfCurrentType.add(dishName);
+            return true;
         } else {
-            System.out.println("Такое блюдо уже есть в меню.");
+            return false;
         }
     }
 
     Map<String, List<String>> getMenu() {
-        return this.menu;
+        return menu;
     }
 
 }

@@ -23,6 +23,7 @@ public class Main {
                 case "1" -> addNewDish();
                 case "2" -> generateDishCombo();
                 case "3" -> {
+                    scanner.close();
                     return;
                 }
             }
@@ -46,7 +47,10 @@ public class Main {
         System.out.println("Введите название блюда:");
         dishName = scanner.nextLine();
 
-        dc.addNewDish(dishType, dishName);
+        boolean isDishAdded = dc.addNewDish(dishType, dishName);
+        if (!isDishAdded) {
+            System.out.println("Такое блюдо уже есть в меню.");
+        }
     }
 
     private static void generateDishCombo() {
@@ -73,7 +77,7 @@ public class Main {
             nextItem = scanner.nextLine();
         }
 
-        List<List<String>> dishComboList = dc.generateSetOfCombo(numberOfCombos, dishTypes);
+        List<List<String>> dishComboList = dc.generateCombos(numberOfCombos, dishTypes);
 
         for (List<String> combo : dishComboList) {
             System.out.println("Комбо " + comboCounter++);
