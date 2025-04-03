@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Map;
 
 public class Menu {
-    Map<String, ArrayList<String>> menu;
+    Map<String, List<String>> menu;
 
     Menu() {
         menu = new HashMap<>();
@@ -26,7 +26,7 @@ public class Menu {
     }
 
     void addNewDish(String dishType, String dishName) {
-        ArrayList<String> dishesOfCurrentType;
+        List<String> dishesOfCurrentType;
 
         if (!menu.containsKey(dishType)) {
             menu.put(dishType, new ArrayList<>());
@@ -41,7 +41,7 @@ public class Menu {
         }
     }
 
-    Map<String, ArrayList<String>> getMenu() {
+    Map<String, List<String>> getMenu() {
         return this.menu;
     }
 

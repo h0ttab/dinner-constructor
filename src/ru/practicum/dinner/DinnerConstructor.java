@@ -1,6 +1,6 @@
 package ru.practicum.dinner;
 
-import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 public class DinnerConstructor {
@@ -11,11 +11,11 @@ public class DinnerConstructor {
         menu.addNewDish(dishType, dishName);
     }
 
-    ArrayList<ArrayList<String>> generateSetOfCombo(int quantity, ArrayList<String> dishTypes) {
+    List<List<String>> generateSetOfCombo(int quantity, List<String> dishTypes) {
         return comboGenerator.generateSetOfCombo(quantity, dishTypes, menu.getMenu());
     }
 
-    Map<String, ArrayList<String>> getMenu() {
+    Map<String, List<String>> getMenu() {
         return menu.getMenu();
     }
 

@@ -1,5 +1,6 @@
 package ru.practicum.dinner;
 
+import java.util.List;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -49,7 +50,7 @@ public class Main {
     }
 
     private static void generateDishCombo() {
-        ArrayList<String> dishTypes = new ArrayList<>();
+        List<String> dishTypes = new ArrayList<>();
         String nextItem;
         int numberOfCombos;
         int comboCounter = 1;
@@ -72,9 +73,9 @@ public class Main {
             nextItem = scanner.nextLine();
         }
 
-        ArrayList<ArrayList<String>> dishComboList = dc.generateSetOfCombo(numberOfCombos, dishTypes);
+        List<List<String>> dishComboList = dc.generateSetOfCombo(numberOfCombos, dishTypes);
 
-        for (ArrayList<String> combo : dishComboList) {
+        for (List<String> combo : dishComboList) {
             System.out.println("Комбо " + comboCounter++);
             System.out.println(combo.toString());
         }

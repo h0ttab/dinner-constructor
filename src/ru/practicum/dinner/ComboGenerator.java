@@ -1,5 +1,6 @@
 package ru.practicum.dinner;
 
+import java.util.List;
 import java.util.ArrayList;
 import java.util.Map;
 import java.util.Random;
@@ -7,12 +8,12 @@ import java.util.Random;
 public class ComboGenerator {
     Random random = new Random();
 
-    private ArrayList<String> getRandomCombo(
-            ArrayList<String> dishTypes, Map<String, ArrayList<String>> menu) {
-        ArrayList<String> combo = new ArrayList<>();
+    private List<String> getRandomCombo(List<String> dishTypes, Map<String,
+            List<String>> menu) {
+        List<String> combo = new ArrayList<>();
 
         for (String dishType : dishTypes) {
-            ArrayList<String> dishesOfType = menu.get(dishType);
+            List<String> dishesOfType = menu.get(dishType);
             String randomDishOfType = dishesOfType.get(random.nextInt(dishesOfType.size()));
             combo.add(randomDishOfType);
         }
@@ -20,9 +21,9 @@ public class ComboGenerator {
         return combo;
     }
 
-    public ArrayList<ArrayList<String>> generateSetOfCombo(
-            int quantity, ArrayList<String> dishTypes, Map<String, ArrayList<String>> menu) {
-        ArrayList<ArrayList<String>> setOfCombo = new ArrayList<>();
+    public List<List<String>> generateSetOfCombo(int quantity,
+            List<String> dishTypes, Map<String, List<String>> menu) {
+        List<List<String>> setOfCombo = new ArrayList<>();
 
         for (int i = 0; i < quantity; i++) {
             setOfCombo.add(getRandomCombo(dishTypes, menu));
