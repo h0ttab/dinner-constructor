@@ -56,13 +56,25 @@ public class Main {
     private static void generateDishCombo() {
         List<String> dishTypes = new ArrayList<>();
         String nextItem;
-        int numberOfCombos;
+        int numberOfCombos = 0;
+        boolean isValidPositiveNumber = false;
         int comboCounter = 1;
 
         System.out.println("Начинаем конструировать обед...");
 
         System.out.println("Введите количество наборов, которые нужно сгенерировать:");
-        numberOfCombos = Integer.parseInt(scanner.nextLine());
+        while (!isValidPositiveNumber) {
+            try {
+                numberOfCombos = Integer.parseInt(scanner.nextLine());
+                if (numberOfCombos > 0) {
+                    isValidPositiveNumber = true;
+                } else {
+                    System.out.println("Количество наборов должно быть положительным числом.");
+                }
+            } catch (NumberFormatException e) {
+                System.out.println("Ошибка: введено не число. Пожалуйста, попробуйте снова.");
+            }
+        }
 
         System.out.println("Вводите типы блюда, разделяя символом переноса строки (enter)." +
                 "Для завершения ввода введите пустую строку");
@@ -70,7 +82,7 @@ public class Main {
 
         while (!nextItem.isEmpty()) {
             if (!dc.checkType(nextItem)) {
-                System.out.println("Такого типа блюд в меню нет.");
+                System.out.println("Ошибка: Блюда этого типа не представлены в меню.");
             } else {
                 dishTypes.add(nextItem);
             }

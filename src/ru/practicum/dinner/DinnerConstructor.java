@@ -20,6 +20,7 @@ public class DinnerConstructor {
     }
 
     boolean checkType(String type) {
-        return this.getMenu().containsKey(type);
+        Map<String, List<String>> currentMenu = this.getMenu();
+        return currentMenu.containsKey(type) || !currentMenu.get(type).isEmpty();
     }
 }
