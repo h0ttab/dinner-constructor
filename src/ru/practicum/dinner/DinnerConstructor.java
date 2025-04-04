@@ -4,23 +4,23 @@ import java.util.List;
 import java.util.Map;
 
 public class DinnerConstructor {
-    Menu menu = new Menu();
-    ComboGenerator comboGenerator = new ComboGenerator();
+    private final Menu menu = new Menu();
+    private final ComboGenerator comboGenerator = new ComboGenerator();
 
     boolean addNewDish(String dishType, String dishName) {
         return menu.addNewDish(dishType, dishName);
     }
 
-    List<List<String>> generateCombos(int quantity, List<String> dishTypes) {
+    public List<List<String>> generateCombos(int quantity, List<String> dishTypes) {
         return comboGenerator.generateCombos(quantity, dishTypes, menu.getMenu());
     }
 
-    Map<String, List<String>> getMenu() {
+    private Map<String, List<String>> getMenu() {
         return menu.getMenu();
     }
 
-    boolean checkType(String type) {
-        Map<String, List<String>> currentMenu = this.getMenu();
+    public boolean checkType(String type) {
+        Map<String, List<String>> currentMenu = getMenu();
         return currentMenu.containsKey(type) && !currentMenu.get(type).isEmpty();
     }
 }

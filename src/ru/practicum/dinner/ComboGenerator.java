@@ -5,8 +5,8 @@ import java.util.ArrayList;
 import java.util.Map;
 import java.util.Random;
 
-public class ComboGenerator {
-    static final Random random = new Random();
+class ComboGenerator {
+    private final Random random = new Random();
 
     private List<String> getRandomCombo(List<String> dishTypes, Map<String,
             List<String>> menu) {
@@ -21,7 +21,7 @@ public class ComboGenerator {
         return combo;
     }
 
-    public List<List<String>> generateCombos(int quantity,
+    List<List<String>> generateCombos(int quantity,
             List<String> dishTypes, Map<String, List<String>> menu) {
         List<List<String>> combos = new ArrayList<>();
 
