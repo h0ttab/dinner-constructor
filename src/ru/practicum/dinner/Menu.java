@@ -5,8 +5,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class Menu {
-    Map<String, List<String>> menu;
+class Menu {
+    private final Map<String, List<String>> menu;
 
     Menu() {
         menu = new HashMap<>();

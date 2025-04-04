@@ -6,8 +6,8 @@ import java.util.Scanner;
 
 public class Main {
 
-    static DinnerConstructor dc;
-    static Scanner scanner;
+    private static DinnerConstructor dc;
+    private static Scanner scanner;
 
     public static void main(String[] args) {
         dc = new DinnerConstructor();
