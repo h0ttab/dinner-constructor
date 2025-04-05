@@ -21,7 +21,7 @@ class ComboGenerator {
         return combo;
     }
 
-    List<List<String>> generateCombos(int quantity,
+    public List<List<String>> generateCombos(int quantity,
             List<String> dishTypes, Map<String, List<String>> menu) {
         List<List<String>> combos = new ArrayList<>();
 

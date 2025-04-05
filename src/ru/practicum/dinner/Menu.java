@@ -8,11 +8,11 @@ import java.util.Map;
 class Menu {
     private final Map<String, List<String>> menu;
 
-    Menu() {
+    public Menu() {
         menu = new HashMap<>();
     }
 
-    boolean addNewDish(String dishType, String dishName) {
+    public boolean addNewDish(String dishType, String dishName) {
         List<String> dishesOfCurrentType;
 
         if (!menu.containsKey(dishType)) {
@@ -24,12 +24,11 @@ class Menu {
         if (!dishesOfCurrentType.contains(dishName)) {
             dishesOfCurrentType.add(dishName);
             return true;
-        } else {
-            return false;
         }
+        return false;
     }
 
-    Map<String, List<String>> getMenu() {
+    public Map<String, List<String>> getMenu() {
         return menu;
     }
 }
